@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中序遍历</title>
+</head>
+
+<body>
+    <script src="./binarySearchTree.js"></script>
+    <script>
+        let nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13];
+
+        let tree1 = new BinarySearchTree();
+        nodes.forEach(key => tree1.insert(key));
+        // 中序遍历 从最小到最大的顺序访问所有节点。
+        // 中序遍历的一种应用就是对树进行排序操作。
+        tree1.inOrderTraverse((key) => { 
+           console.log(key);
+        });
+    </script>
+</body>
+
+</html>

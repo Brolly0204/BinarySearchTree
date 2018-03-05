@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./binarySearchTree.js"></script>
+    <script>
+     let nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13];
+        let tree = new BinarySearchTree();
+        nodes.forEach(key => tree.insert(key));
+        // 搜索最小值
+        console.log(tree.min());
+        // 搜索最大值
+        console.log(tree.max());
+        // 搜素特定值
+        console.log(tree.search(1));
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后序遍历</title>
+</head>
+
+<body>
+    <script src="./binarySearchTree.js"></script>
+    <script>
+        let nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13];
+
+        let tree1 = new BinarySearchTree();
+        nodes.forEach(key => tree1.insert(key));
+        // 后序遍历则是先访问节点的后代节点，再访问节点本身。后序遍历的一种应用是计算一个目录和它的子目录中所有文件所占空间的大小。
+        tree1.postOrderTraverse((key) => {
+            console.log(key);
+        });
+    </script>
+</body>
+
+</html>

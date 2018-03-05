@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>先序遍历</title>
+</head>
+
+<body>
+    <script src="./binarySearchTree.js"></script>
+    <script>
+        let nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13];
+        let tree1 = new BinarySearchTree();
+        let tree2 = new BinarySearchTree();
+        nodes.forEach(key => tree1.insert(key));
+
+        // 先序遍历 按照最优先顺序（父节点优先于后代节点的顺序）沿一定路径访问所有的节点 先根后左再右
+        tree1.preOrderTraverse((key) => { 
+            console.log(key);
+            // 先序遍历应用：根据存在的二叉树 再拷贝一个一模一样的二叉搜索树
+            tree2.insert(key);
+        });
+        console.log(tree1.root);
+        console.log(tree2.root);
+        
+    </script>
+</body>
+
+</html>
