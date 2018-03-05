@@ -117,10 +117,10 @@ class BinarySearchTree {
         return true;
     }
 
-    remove(key) {
+    remove(key) { // 移除指定值 移除总共有三种情况
         this.root = this.removeNode(this.root, key);
     }
-    findMinNode(node) {
+    findMinNode(node) { // 找到指定节点子树中最小值
         if (node) {
             while (node && node.left !== null) {
                 node = node.left;
@@ -140,21 +140,24 @@ class BinarySearchTree {
             node.right = this.removeNode(node.right, key);
             return node;
         } else {
+            // 第一种情况——移除一个叶节点
             if (node.left === null && node.right === null) {
                 node = null;
                 return node;
             }
 
-            if (node.left === null) {
+            // 第二种情况——移除一个只有一个子节点的节点
+            if (node.left === null) { // 有一个右子节点
                 node = node.right;
                 return node;
             }
 
-            if (node.right === null) {
+            if (node.right === null) { // 有一个左子节点
                 node = node.left;
                 return node;
             }
 
+            // 第三种情况——移除一个有两个子节点的节点
             const aux = this.findMinNode(node.right); // 找到要删除节点右子树中 最小值
             node.key = aux.key; // 用右子树的最小值 取代要删除的值 此时出现重复了
             node.right = this.removeNode(node.right, aux.key); // 再将右边重复的最小值删除
